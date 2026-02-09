@@ -80,4 +80,46 @@ MODIFY COLUMN `date` DATE;
 
 
 
+-- ===============================
+-- 3. Handle NULL AND BLANK Values
+-- ===============================
+
+
+-- Replace empty strings in the 'industry' column with NULL for consistency
+UPDATE layoffs_staging2
+SET industry = NULL
+WHERE industry = '';
+
+
+-- Fill missing 'industry' values (NULL) by copying from other rows of the same company 
+-- where 'industry' is not NULL
+UPDATE layoffs_staging2 t1
+JOIN layoffs_staging2 t2
+	ON 
+    t1.company = t2.company
+SET t1.industry = t2.industry
+WHERE t1.industry IS NULL AND t2.industry IS NOT NULL;
+
+
+-- ===============================
+-- 4. Removal Of Unwanted columns
+-- ===============================
+
+-- Remove rows where both 'total_laid_off' and 'percentage_laid_off' are NULL
+-- These rows have no useful layoff data
+DELETE 
+FROM layoffs_staging2
+WHERE total_laid_off IS NULL
+AND percentage_laid_off IS NULL;
+
+-- Drop the 'row_num' column as it was only used for deduplication
+ALTER TABLE layoffs_staging2
+DROP COLUMN row_num;
+
+
+-- Create a finalized cleaned table from the deduplicated and standardized staging table
+CREATE TABLE layoffs_cleaned AS
+SELECT *
+FROM layoffs_staging2;
+
 
