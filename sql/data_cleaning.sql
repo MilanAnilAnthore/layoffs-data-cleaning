@@ -7,9 +7,11 @@
 -- 1. Create Staging Table
 -- ========================
 
-CREATE TABLE layoffs_staging
-LIKE layoffs;
+DROP TABLE IF EXISTS layoffs_staging;
+CREATE TABLE layoffs_staging LIKE layoffs;
 
+
+-- Copy all records from the original layoffs table into the staging table for cleaning
 INSERT layoffs_staging
 SELECT *
 FROM layoffs;
@@ -36,7 +38,7 @@ ROW_NUMBER() OVER(
 FROM layoffs_staging;
 
 
--- Remove duplicate rows
+-- Remove duplicate rows, keeping only the first occurrence of each unique record
 DELETE
 FROM layoffs_staging2
 WHERE row_num > 1;
@@ -65,8 +67,16 @@ SET country = TRIM(TRAILING '.' FROM country)
 WHERE country LIKE 'United States%';
 
 
-SELECT `date`
-FROM layoffs_staging2;
+-- Convert the 'date' column from string format '%m/%d/%Y' to proper DATE type
+-- in layoffs_staging2 for consistent date handling
+UPDATE layoffs_staging2
+SET `date` = STR_TO_DATE(`date`, '%m/%d/%Y');
+
+
+-- Change the data type of the 'date' column to DATE 
+-- in layoffs_staging2 to ensure proper date storage and operations
+ALTER TABLE layoffs_staging2
+MODIFY COLUMN `date` DATE;
 
 
 
