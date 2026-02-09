@@ -42,8 +42,31 @@ FROM layoffs_staging2
 WHERE row_num > 1;
 
 
+-- ========================
+-- 3. Standardizing data
+-- ========================
+
+-- Remove the white space from the ends
+UPDATE layoffs_staging2
+SET company = TRIM(company);
 
 
+-- Update all records in the layoffs_staging2 table where the industry starts with 'Crypto'
+-- and standardize the industry name to 'Crypto'
+UPDATE layoffs_staging2
+SET industry = 'Crypto'
+WHERE industry LIKE 'Crypto%';
+
+
+-- Remove any trailing periods from country names starting with 'United States' 
+-- to standardize the country field in layoffs_staging2
+UPDATE layoffs_staging2
+SET country = TRIM(TRAILING '.' FROM country) 
+WHERE country LIKE 'United States%';
+
+
+SELECT `date`
+FROM layoffs_staging2;
 
 
 
