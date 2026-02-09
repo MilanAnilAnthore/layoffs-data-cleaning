@@ -1,73 +1,73 @@
-# 🧹 Layoffs Data Cleaning & Analysis
+# Layoffs Data Cleaning & Analysis
 
 A comprehensive SQL-based data cleaning and exploratory analysis project focused on global company layoffs from 2020-2023. This project demonstrates end-to-end data pipeline skills—from handling messy real-world data to extracting meaningful business insights.
 
-## 📊 Project Overview
+## Project Overview
 
 As a web developer, understanding data workflows is crucial for building robust backend systems and making informed architectural decisions. This project showcases my ability to work with databases, write complex SQL queries, ensure data quality, and extract actionable insights—all essential skills for full-stack development.
 
-### 💡 Key Highlights
+### Key Highlights
 
 - **383,659 employees** affected across the dataset
 - Cleaned and standardized **1,996 records** from messy raw data
 - Analyzed trends across **multiple industries and countries**
 - **2022** was the peak year with **160,661 layoffs**
 
-## 🗂️ Dataset
+## Dataset
 
 - **Source**: Global company layoffs dataset (2020-2023)
 - **Raw Records**: ~2,362 entries with inconsistencies and duplicates
 - **Cleaned Records**: 1,996 validated and analysis-ready entries
 - **Columns**: `company`, `location`, `industry`, `total_laid_off`, `percentage_laid_off`, `date`, `stage`, `country`, `funds_raised_millions`
 
-## 🧹 Data Cleaning Pipeline
+## Data Cleaning Pipeline
 
-### 1️⃣ **Staging & Preservation**
+### 1️ **Staging & Preservation**
 - Created staging tables to preserve original data
 - Implemented safe, non-destructive cleaning workflow
 
-### 2️⃣ **Deduplication**
+### 2️ **Deduplication**
 - Used `ROW_NUMBER()` window function to identify duplicates
 - Partitioned by all key columns to catch true duplicates
 - Removed 366 duplicate records
 
-### 3️⃣ **Standardization**
+### 3️ **Standardization**
 - Trimmed whitespace from company names
 - Normalized industry categories (e.g., "Crypto Currency" → "Crypto")
 - Fixed country name inconsistencies (e.g., "United States." → "United States")
 - Converted date strings to proper `DATE` type for analysis
 
-### 4️⃣ **NULL Handling**
+### 4️ **NULL Handling**
 - Converted empty strings to `NULL` for consistency
 - Backfilled missing industry values using self-join logic
 - Removed rows with no useful layoff data (both metrics NULL)
 
-### 5️⃣ **Final Output**
+### 5️ **Final Output**
 - Exported clean, analysis-ready dataset
 - Ready for visualization, reporting, or API integration
 
-## 📈 Key Findings
+##  Key Findings
 
-### 🏢 **Most Affected Companies**
+###  **Most Affected Companies**
 1. **Amazon** - Largest total layoffs
 2. **Google** - Significant workforce reduction
 3. **Meta** - Major restructuring
 4. **Salesforce** - Enterprise tech downsizing
 5. **Philips** - Healthcare sector impact
 
-### 🏭 **Most Impacted Industries**
+###  **Most Impacted Industries**
 1. **Consumer** - Hardest hit sector
 2. **Retail** - E-commerce adjustments
 3. **Other** - Diverse sectors affected
 4. **Transportation** - Post-pandemic shifts
 5. **Finance** - Economic pressures
 
-### 📅 **Temporal Trends**
+###  **Temporal Trends**
 - **2022** was the worst year with **160,661 employees** laid off
 - Tech industry faced unprecedented restructuring
 - Clear correlation with economic conditions
 
-## 🛠️ Technologies & Skills
+##  Technologies & Skills
 
 **Database & Query Language:**
 - MySQL - Data cleaning, transformation, and analysis
@@ -88,7 +88,7 @@ As a web developer, understanding data workflows is crucial for building robust 
 - Comprehensive commenting
 - Version control with Git
 
-## 🚀 How to Run
+##  How to Run
 
 ### Prerequisites
 - MySQL 5.7+ or MariaDB 10.2+
@@ -132,7 +132,7 @@ mysql -u your_username -p layoffs_project < sql/data_cleaning.sql
 mysql -u your_username -p layoffs_project < sql/Layoffs\ Data\ -\ Exploratory\ Data\ Analysis\ \(EDA\).sql
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 layoffs-data-cleaning/
@@ -148,7 +148,7 @@ layoffs-data-cleaning/
     └── Layoffs Data - EDA.sql        # Exploratory analysis queries
 ```
 
-## 💼 Why This Matters for Web Development
+##  Why This Matters for Web Development
 
 This project directly translates to real-world web development scenarios:
 
@@ -159,7 +159,7 @@ This project directly translates to real-world web development scenarios:
 - **ETL Processes**: Handling data imports/exports in production systems
 - **Data Integrity**: Implementing validation logic in backend services
 
-## 🎯 Skills Gained
+##  Skills Gained
 
 ✅ Write production-quality SQL queries  
 ✅ Handle messy, real-world datasets  
@@ -169,7 +169,7 @@ This project directly translates to real-world web development scenarios:
 ✅ Extract business insights from data  
 ✅ Document technical work effectively  
 
-## 📫 Connect With Me
+##  Connect With Me
 
 **Milan Anil Anthore**
 
@@ -178,7 +178,7 @@ This project directly translates to real-world web development scenarios:
 
 ---
 
-## 📚 About This Project
+##  About This Project
 
 This project was completed as part of my continuous learning in data engineering and backend development. All code was written and understood by me, demonstrating my ability to work with complex datasets and extract meaningful insights.
 
