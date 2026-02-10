@@ -1,10 +1,10 @@
-# Layoffs Data Cleaning & Analysis
+#  Layoffs Data Cleaning & Analysis
 
-A comprehensive SQL-based data cleaning and exploratory analysis project focused on global company layoffs from 2020-2023. This project demonstrates end-to-end data pipeline skills—from handling messy real-world data to extracting meaningful business insights.
+A SQL-based data cleaning and exploratory analysis project focused on global company layoffs from 2020-2023. This project demonstrates my data cleaning and transformation workflow—from handling messy data to extracting meaningful insights.
 
 ## Project Overview
 
-As a web developer, understanding data workflows is crucial for building robust backend systems and making informed architectural decisions. This project showcases my ability to work with databases, write complex SQL queries, ensure data quality, and extract actionable insights—all essential skills for full-stack development.
+As a web developer, understanding data workflows is crucial for building robust backend systems and making informed decisions. This project showcases my ability to work with databases, write SQL queries, ensure data quality, and extract actionable insights—all useful skills for full-stack development.
 
 ### Key Highlights
 
@@ -13,14 +13,14 @@ As a web developer, understanding data workflows is crucial for building robust 
 - Analyzed trends across **multiple industries and countries**
 - **2022** was the peak year with **160,661 layoffs**
 
-## Dataset
+##  Dataset
 
 - **Source**: Global company layoffs dataset (2020-2023)
 - **Raw Records**: ~2,362 entries with inconsistencies and duplicates
 - **Cleaned Records**: 1,996 validated and analysis-ready entries
 - **Columns**: `company`, `location`, `industry`, `total_laid_off`, `percentage_laid_off`, `date`, `stage`, `country`, `funds_raised_millions`
 
-## Data Cleaning Pipeline
+##  Data Cleaning Process
 
 ### 1️ **Staging & Preservation**
 - Created staging tables to preserve original data
@@ -44,7 +44,6 @@ As a web developer, understanding data workflows is crucial for building robust 
 
 ### 5️ **Final Output**
 - Exported clean, analysis-ready dataset
-- Ready for visualization, reporting, or API integration
 
 ##  Key Findings
 
@@ -71,21 +70,21 @@ As a web developer, understanding data workflows is crucial for building robust 
 
 **Database & Query Language:**
 - MySQL - Data cleaning, transformation, and analysis
-- Advanced SQL (Window Functions, CTEs, Joins, Subqueries)
+- SQL techniques: Window Functions, Joins, Date Handling, Aggregations
 
 **Data Skills Demonstrated:**
-- ETL Pipeline Design
-- Data Quality Assessment
-- Duplicate Detection & Removal
-- Data Standardization & Normalization
-- NULL Value Handling
-- Temporal Data Analysis
-- Aggregation & Grouping
+- Data transformation workflow design
+- Data quality assessment
+- Duplicate detection & removal
+- Data standardization & normalization
+- NULL value handling
+- Temporal data analysis
+- Aggregation & grouping
 
 **Best Practices:**
 - Staging table methodology
 - Non-destructive data operations
-- Comprehensive commenting
+- Well-commented SQL scripts
 - Version control with Git
 
 ##  How to Run
@@ -122,7 +121,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 ```
 
-### Step 2: Run Cleaning Pipeline
+### Step 2: Run Cleaning Process
 ```bash
 mysql -u your_username -p layoffs_project < sql/data_cleaning.sql
 ```
@@ -144,29 +143,28 @@ layoffs-data-cleaning/
 │   └── cleaned/
 │       └── layoffs_cleaned.csv       # Clean, analysis-ready data (~1,996 rows)
 └── sql/
-    ├── data_cleaning.sql             # Complete data cleaning pipeline
+    ├── data_cleaning.sql             # Complete data cleaning script
     └── Layoffs Data - EDA.sql        # Exploratory analysis queries
 ```
 
-##  Why This Matters for Web Development
+##  Relevance to Web Development
 
-This project directly translates to real-world web development scenarios:
+This project demonstrates skills applicable to web development:
 
 - **User Data Migrations**: Cleaning legacy data during system upgrades or platform migrations
-- **Database Optimization**: Writing efficient queries for high-performance applications
-- **API Data Validation**: Ensuring incoming data quality before processing
-- **Admin Dashboards**: Building analytics features with complex SQL aggregations
-- **ETL Processes**: Handling data imports/exports in production systems
+- **Database Work**: Writing SQL queries for data transformation
+- **Data Validation**: Understanding data quality and integrity
+- **Admin Dashboards**: SQL skills applicable to building analytics features
 - **Data Integrity**: Implementing validation logic in backend services
 
-##  Skills Gained
+##  What I Learned
 
-✅ Write production-quality SQL queries  
-✅ Handle messy, real-world datasets  
-✅ Design ETL pipelines  
-✅ Apply window functions for complex operations  
-✅ Optimize database operations  
-✅ Extract business insights from data  
+✅ Write clean, well-documented SQL queries  
+✅ Handle messy datasets  
+✅ Design data transformation workflows  
+✅ Apply window functions for data operations  
+✅ Work with databases effectively  
+✅ Extract insights from data  
 ✅ Document technical work effectively  
 
 ##  Connect With Me
@@ -180,9 +178,9 @@ This project directly translates to real-world web development scenarios:
 
 ##  About This Project
 
-This project was completed as part of my continuous learning in data engineering and backend development. All code was written and understood by me, demonstrating my ability to work with complex datasets and extract meaningful insights.
+This project was completed as part of my continuous learning in data analysis and backend development. All code was written and understood by me, demonstrating my ability to work with datasets and extract meaningful insights.
 
-*Feel free to explore, fork, or reach out if you have questions!* 🚀
+*Feel free to explore, fork, or reach out if you have questions!* 
 
 ---
 
